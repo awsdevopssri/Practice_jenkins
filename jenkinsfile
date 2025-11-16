@@ -11,7 +11,7 @@ pipeline{
    }
    stage('build'){
     steps{
-	  
+	  bat 'node -v'
 	  bat 'Hello.js'
 	}
    }
