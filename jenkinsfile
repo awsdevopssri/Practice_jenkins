@@ -1,0 +1,19 @@
+pipeline{
+  agent any
+  triggers {
+   pollSCM('* * * * *')
+  }
+  stages{
+   stage('git'){
+      steps{
+      git url:'https://github.com/awsdevopssri/Practice_jenkins.git',branch:'node_js'
+	  }
+   }
+   stage('build'){
+    steps{
+	  bat 'node -v'
+	  bat 'Hello.js'
+	}
+   }
+  }
+}
